@@ -6,10 +6,15 @@ from io import BytesIO
 from PIL import Image
 from urllib.parse import quote
 
+from dotenv import load_dotenv
+load_dotenv()
+PEXELS_KEY = os.getenv("PEXELS_KEY")
+
 # 🔑 API 키 설정
 UNSPLASH_KEY = "j5lyiOKj0bj6iMFPgvCnO0cCB_eWEyx5NsXZr3VRR94"
 PIXABAY_KEY = "51462455-6f4af1014e035b145b2e7731b"
 KOGOL_KEY = "NBzHjXyev6wbzDaiuwiq+/U4WpluDs7pZypSHayREgTmJo32rmlp5ssiFGnUlZvFH1u+S3YjH7jJv+3w7eFNUg=="
+PEXELS_KEY = "kd1frTIFwfExQIR5DIGn1eKJ7gEGUIbbWDKSmi3sLjGhv9nDVP0Qmnnh"
 
 DOWNLOAD_DIR = "images"
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
