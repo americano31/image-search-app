@@ -124,8 +124,10 @@ count = st.slider("이미지 개수 (API별)", min_value=5, max_value=30, step=5
 
 if st.button("검색 시작"):
     # 기존 이미지 삭제
-    for f in os.listdir(DOWNLOAD_DIR):
-        os.remove(os.path.join(DOWNLOAD_DIR, f))
+for f in os.listdir(DOWNLOAD_DIR):
+    file_path = os.path.join(DOWNLOAD_DIR, f)
+    if os.path.isfile(file_path):
+        os.remove(file_path)
 
     with st.spinner("이미지를 검색 중입니다..."):
         search_unsplash(keyword, count)
